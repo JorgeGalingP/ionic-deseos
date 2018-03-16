@@ -24,5 +24,5 @@ You need to install angular at https://cli.angular.io/ , ionic at https://ionicf
 * [Atom](https://atom.io/) - A nice IDE
 
 ## Authors
-* **
-* **Following this course** - [Angular 2 Fernando Herrera](https://www.udemy.com/angular-2-fernando-herrera)
+
+**Following this course** - [Angular 2 Fernando Herrera](https://www.udemy.com/angular-2-fernando-herrera)
