@@ -1,16 +1,32 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Lista de pendientes</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Elementos pendientes</h2>
+    <ion-card *ngFor="let lista of _listaDeseos.listas;  let i = index">
+        <ion-item>
+            <h2> #{{i}} {{lista.nombre}}</h2>
+        </ion-item>
+        <ion-list>
+            <ion-item>
+                <ion-icon ios="ios-arrow-dropright-circle" md="md-arrow-dropright-circle"></ion-icon>
+                Item 1
+            </ion-item>
+            <ion-item>
+                <ion-icon ios="ios-arrow-dropright-circle" md="md-arrow-dropright-circle"></ion-icon>
+                Item 2
+            </ion-item>
+            <ion-item>
+                <ion-icon ios="ios-arrow-dropright-circle" md="md-arrow-dropright-circle"></ion-icon>
+                Item 3
+            </ion-item>
+        </ion-list>
+    </ion-card>
 
-  <ul>
-      <li *ngFor="let lista of _listaDeseos.listas">
-          {{ lista.nombre }}
-      </li>
-  </ul>
-  
+    <ion-fab right bottom>
+    <button ion-fab color="primary"><ion-icon ios="ios-add" md="md-add"></ion-icon></button>
+  </ion-fab>
+
 </ion-content>
