@@ -17,15 +17,15 @@
     <ion-card-content>
         <ion-item>
             <ion-label floating>Item:</ion-label>
-            <ion-input type="text" [(ngModel)]="nombreItem" name="nombreItem" (keyup.enter)="agregar()"></ion-input>
+            <ion-input type="text" [(ngModel)]="nombreItem" name="nombreItem" (keyup.enter)="agregarItem()"></ion-input>
         </ion-item>
 
-        <button ion-button class="button-block" (click)="agregar()">Agregar</button>
+        <button ion-button class="button-block" (click)="agregarItem()">Agregar</button>
     </ion-card-content>
 </ion-card>
 
 <!-- handle items -->
-<ion-card>
+<ion-card *ngIf="items.length > 0">
     <ion-card-header>
         <h3>Items agregados</h3>
     </ion-card-header>
@@ -33,10 +33,10 @@
         <ion-list *ngFor="let item of items; let i = index">
             <ion-item>
                 <button ion-button color="dark" clear>{{item.nombre}}</button>
-                <button ion-button outline item-right color="danger">
+                <button ion-button outline item-right color="danger" (click)="borrarItem(i)">
                     <ion-icon ios="ios-trash" md="md-trash">
                     </ion-icon>
-                    Borrar item #{{i}}
+                    Borrar item
                 </button>
             </ion-item>
         </ion-list>

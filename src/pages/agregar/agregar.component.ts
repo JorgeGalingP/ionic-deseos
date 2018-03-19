@@ -16,7 +16,8 @@ export class AgregarComponent implements OnInit {
 
     ngOnInit() {}
 
-    agregar() {
+    // method for add a new item
+    agregarItem() {
         // handle exception when item is empty
         if (this.nombreItem.length == 0) {
             return;
@@ -29,5 +30,10 @@ export class AgregarComponent implements OnInit {
         // add current item to list
         this.items.push(item);
         this.nombreItem = ""; // delete previous name
+    }
+
+    // method for delete a item by id
+    borrarItem(id:number) {
+        this.items.splice(id, 1); // splice(positionDelete, numberOfItemsDeleted)
     }
 }
