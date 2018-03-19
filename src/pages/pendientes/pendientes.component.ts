@@ -14,7 +14,7 @@ export class PendientesComponent implements OnInit {
   ngOnInit() {}
 
   irAgregar() {
-      // with push we can control the screen to screen movement
+      // with push we can control the screen navigation
       // and the push method need the component we want to navigate
       this.navCtrl.push(AgregarComponent);
   }
