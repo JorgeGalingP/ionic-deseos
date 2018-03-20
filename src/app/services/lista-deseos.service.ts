@@ -6,13 +6,14 @@ import { Lista } from '../clases/listas';
 export class ListaDeseosService {
     // object to handle all the current user's lists
     listas:Lista[] = [];
-    
+
     // constructor for our service
     constructor() {
         console.log("Servicio inicializado");
 
         // load data from local storage when service is called
         this.cargarData();
+        console.log("Data inicializada");
     }
 
     // save to local storage
@@ -21,7 +22,7 @@ export class ListaDeseosService {
         localStorage.setItem("data", JSON.stringify(this.listas));
     }
 
-    // get data for local storage
+    // get data for local storage if exists
     cargarData() {
         if(localStorage.getItem("data")) {
             // get all lists parsing from JSON to a javascript object
@@ -32,6 +33,6 @@ export class ListaDeseosService {
     // add new item to the list
     agregarLista(lista:Lista) {
         this.listas.push(lista);
-        this.actualizarData;
+        this.actualizarData();
     }
 }
