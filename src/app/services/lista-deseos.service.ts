@@ -35,4 +35,10 @@ export class ListaDeseosService {
         this.listas.push(lista);
         this.actualizarData();
     }
+
+    // delete a List
+    borrarLista(i:number) {
+        this.listas.splice(i, 1);
+        this.actualizarData();
+    }
 }
