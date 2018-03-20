@@ -34,14 +34,11 @@ export class ListaDeseosService {
     agregarLista(lista:Lista) {
         this.listas.push(lista);
         this.actualizarData();
-<<<<<<< HEAD
     }
 
     // delete a List
     borrarLista(i:number) {
         this.listas.splice(i, 1);
         this.actualizarData();
-=======
->>>>>>> d2eb83333186377089e9e3ecc4437adea28c38a1
     }
 }
