@@ -6,19 +6,32 @@ import { Lista } from '../clases/listas';
 export class ListaDeseosService {
     // object to handle all the current user's lists
     listas:Lista[] = [];
-
+    
     // constructor for our service
     constructor() {
         console.log("Servicio inicializado");
 
-        // initialize a bunch of lists
-        let lista1 = new Lista("Compras en el supermercado");
-        let lista2 = new Lista("Juegos que quiero comprar");
-        let lista3 = new Lista("Tareas universidad");
+        // load data from local storage when service is called
+        this.cargarData();
+    }
 
-        // populate the array of "Listas"
-        this.listas.push(lista1);
-        this.listas.push(lista2);
-        this.listas.push(lista3);
+    // save to local storage
+    actualizarData() {
+        // save all lists using "data" key and transform to JSON
+        localStorage.setItem("data", JSON.stringify(this.listas));
+    }
+
+    // get data for local storage
+    cargarData() {
+        if(localStorage.getItem("data")) {
+            // get all lists parsing from JSON to a javascript object
+            this.listas = JSON.parse(localStorage.getItem("data"));
+        }
+    }
+
+    // add new item to the list
+    agregarLista(lista:Lista) {
+        this.listas.push(lista);
+        this.actualizarData;
     }
 }
